@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/policy_status.dart';
+import 'package:travel_app/ui/widgets/refund/policy_status.dart';
 
 class PolicyWidget extends StatelessWidget {
   const PolicyWidget({super.key});

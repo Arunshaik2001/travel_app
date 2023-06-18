@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/concentric_circle_widget.dart';
-import 'package:travel_app/line_widget.dart';
+import 'package:travel_app/ui/commons/concentric_circle_widget.dart';
+import 'package:travel_app/ui/commons/line_widget.dart';
 
 class PolicyStatus extends StatelessWidget {
   const PolicyStatus({super.key});

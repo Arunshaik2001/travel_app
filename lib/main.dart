@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/combined_widget.dart';
-import 'package:travel_app/pill.dart';
-import 'package:travel_app/policy_widget.dart';
-import 'dashed_line.dart';
-import 'list_combined.dart';
+import 'package:travel_app/ui/widgets/journey/index.dart';
+import 'package:travel_app/ui/widgets/refund/index.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -84,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           child: Column(
             children: [
-              const IntrinsicHeight(child: CombinedListWidget()),
+              TripCard(destinationCount: 3,),
               PolicyWidget()
             ],
           ),

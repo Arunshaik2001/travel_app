@@ -7,7 +7,7 @@ class ConcentricCircleWidget extends StatelessWidget {
   final Color outerColor;
   final Color innerColor;
 
-  const ConcentricCircleWidget({super.key,
+  ConcentricCircleWidget({super.key,
     required this.outerRadius,
     required this.innerRadius,
     required this.outerColor,
