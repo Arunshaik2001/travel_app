@@ -4,6 +4,28 @@ import 'package:travel_app/ui/commons/index.dart';
 import 'package:travel_app/ui/widgets/journey/index.dart';
 import 'package:travel_app/utils/index.dart';
 
+///render pill widget, lines, circles widgets combine to reflect a whole sub-point.
+///
+/// parameters:
+/// **showLeftDot**            - is the check whether to show left dot.
+/// **showRightDot**           - is the check whether to show right dot.
+/// **leftPointInnerColor**    - is the left point inner color.
+/// **rightPointInnerColor**   - is the right point inner color.
+/// **leftPointOuterColor**    - is the left point outer color.
+/// **rightPointOuterColor**   - is the right point outer color.
+/// **lineLength**             - is the line length.
+/// **isLeftLineDashed**       - is the check whether left line is dashed or not.
+/// **isRightLineDashed**      - is the check whether right line is dashed or not.
+/// **pillText**               - is the text of pill.
+/// **pillColor**              - is the text of pill color.
+/// **pillTextStyle**          - is the text style of pill text.
+/// **pillBorderRadius**       - is the border radius of pill.
+/// **leftPointOuterRadius**   - is the left point outer radius.
+/// **leftPointInnerRadius**   - is the left point inner radius.
+/// **rightPointOuterRadius**  - is the right point outer radius.
+/// **rightPointInnerRadius**  - is the right point inner radius.
+/// **dashLength**             - is the dash length.
+/// **dashColor**              - is the dash color.
 class SubPointDetails extends StatelessWidget {
   bool showLeftDot, showRightDot;
   Color? leftPointInnerColor, rightPointInnerColor;
@@ -64,7 +86,7 @@ class SubPointDetails extends StatelessWidget {
               color: dashColor!),
         if (pillText.isNotNullNorEmpty())
           PillWidget(
-            text: pillText!, //'01h 45m'
+            text: pillText!,
             color: pillColor ?? AppColors.lightBlue,
             borderRadius: pillBorderRadius,
             padding:
@@ -75,7 +97,7 @@ class SubPointDetails extends StatelessWidget {
               direction: Axis.horizontal,
               length: lineLength!,
               dashLength: dashLength,
-              dashColor: dashColor!), //Colors.deepOrange
+              dashColor: dashColor!),
         if (!isRightLineDashed)
           LineWidget(
               isVertical: false,

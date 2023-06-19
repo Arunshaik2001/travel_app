@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 
+///dashed line widget.
+///
+/// parameters:
+/// **direction**         - is the direction of line.
+/// **dashColor**         - is the color of each dash.
+/// **length**            - is the length of the line.
+/// **dashGap**           - is the gap between two dashes.
+/// **dashLength**        - is the length of a dash.
+/// **dashThickness**     - is the thickness of a dash.
+/// **dashBorderRadius**  - is the dash radius.
 class DashedLineWidget extends StatelessWidget {
   const DashedLineWidget(
       {Key? key,

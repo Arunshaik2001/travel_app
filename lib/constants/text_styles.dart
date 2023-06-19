@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
+///Text styles used on text are defined here.
 class TextStyles {
   static const String roboto = 'Roboto';
 

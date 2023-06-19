@@ -3,6 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/constants/index.dart';
 import 'package:travel_app/utils/index.dart';
 
+///render journey widget between two indicators.
+///
+/// parameters:
+/// **imagePath**            - is the image path to show.
+/// **imageSize**            - is the image size.
+/// **title**                - is the title of the journey.
+/// **description**          - is the description of the journey.
+/// **titleTextStyle**       - is the place time.
+/// **descriptionTextStyle** - is the time text style used.
 class JourneyDetails extends StatelessWidget {
   final String? imagePath;
   final Size? imageSize;

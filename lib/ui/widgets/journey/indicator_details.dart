@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/constants/index.dart';
 import 'package:travel_app/utils/index.dart';
 
+///description about an indicator.
+///
+/// parameters:
+/// **time**              - is the text time.
+/// **date**              - is the date time.
+/// **location**          - is the location time.
+/// **place**             - is the place time.
+/// **timeTextStyle**     - is the time text style used.
+/// **dateTextStyle**     - is the date text style used.
+/// **locationTextStyle** - is the location text style used.
+/// **placeTextStyle**    - is the place text style used.
 class IndicatorDetails extends StatelessWidget {
   final String? time;
   final String? date;
@@ -32,7 +43,6 @@ class IndicatorDetails extends StatelessWidget {
             time!,
             style: timeTextStyle ?? TextStyles.indicatorTimeTextStyle,
           ),
-        //'15:50'
         if (date.isNotNullNorEmpty())
           const SizedBox(
             height: 5,
@@ -42,7 +52,6 @@ class IndicatorDetails extends StatelessWidget {
             date!,
             style: dateTextStyle ?? TextStyles.indicatorDateTextStyle,
           ),
-        //'30th Jun 2023'
         if (location.isNotNullNorEmpty())
           const SizedBox(
             height: 5,
@@ -52,7 +61,6 @@ class IndicatorDetails extends StatelessWidget {
             location!,
             style: locationTextStyle ?? TextStyles.indicatorLocationTextStyle,
           ),
-        //'PUNE(PNQ)'
         if (place.isNotNullNorEmpty())
           const SizedBox(
             height: 2,
@@ -62,7 +70,6 @@ class IndicatorDetails extends StatelessWidget {
             place!,
             style: placeTextStyle ?? TextStyles.indicatorPlaceTextStyle,
           ),
-        // 'Terminal 1'
       ],
     );
   }
