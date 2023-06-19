@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/ui/widgets/refund/policy_status.dart';
+import 'package:travel_app/ui/widgets/refund/refund_policy_status.dart';
 
-class PolicyWidget extends StatelessWidget {
-  const PolicyWidget({super.key});
+class RefundPolicyCard extends StatelessWidget {
+  const RefundPolicyCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +24,8 @@ class PolicyWidget extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                PolicyStatus(),
+              children: [
+                RefundPolicyStatus(policyDatesCount: 3,),
               ],
             ),
           ),

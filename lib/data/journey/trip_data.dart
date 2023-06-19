@@ -6,9 +6,9 @@ import 'indicator_data.dart';
 import 'journey_detail.dart';
 
 class TripData {
-  List<JourneyDetail?> journeyDetail;
-  List<IndicatorData?> indicatorData;
-  List<SubPointDetail?> subPointDetails;
+  List<JourneyDetail> journeyDetails;
+  List<IndicatorData> indicatorDataList;
+  List<SubPointDetail> subPointDetails;
   double? cardElevation;
   Color? cardColor;
   Color? cardBorderColor;
@@ -17,8 +17,8 @@ class TripData {
   int destinationCount;
 
   TripData({
-    required this.journeyDetail,
-    required this.indicatorData,
+    required this.journeyDetails,
+    required this.indicatorDataList,
     required this.subPointDetails,
     required this.destinationCount,
     this.cardElevation,

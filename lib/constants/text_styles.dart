@@ -19,10 +19,25 @@ class TextStyles {
 
   static TextStyle get journeyDetailDescriptionStyle => const TextStyle(
         color: AppColors.black,
-        fontWeight: medium,
+        fontWeight: bold,
         fontFamily: roboto,
         fontSize: 16.0,
       );
+
+
+  static TextStyle get journeyDetailRedTitleStyle => const TextStyle(
+    color: AppColors.red,
+    fontWeight: bold,
+    fontFamily: roboto,
+    fontSize: 16.0,
+  );
+
+  static TextStyle get journeyDetailRedDescriptionStyle => const TextStyle(
+    color: AppColors.red,
+    fontWeight: bold,
+    fontFamily: roboto,
+    fontSize: 16.0,
+  );
 
   static TextStyle get pillTextStyle => const TextStyle(
     color: AppColors.black,

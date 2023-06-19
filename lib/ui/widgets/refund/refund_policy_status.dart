@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/ui/commons/concentric_circle_widget.dart';
 import 'package:travel_app/ui/commons/line_widget.dart';
 
-class PolicyStatus extends StatelessWidget {
-  const PolicyStatus({super.key});
+class RefundPolicyStatus extends StatelessWidget {
+
+  int policyDatesCount;
+  RefundPolicyStatus({super.key,required this.policyDatesCount});
 
   @override
   Widget build(BuildContext context) {

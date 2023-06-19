@@ -2,26 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/constants/app_colors.dart';
 import 'package:travel_app/constants/static_assets.dart';
 import 'package:travel_app/ui/widgets/journey/sub_point_details.dart';
+import 'package:travel_app/utils/list_utils.dart';
 
+import '../../../data/journey/trip_data.dart';
 import 'indicator_details.dart';
 import 'journey-details.dart';
 
 class TripCard extends StatelessWidget {
-  double cardElevation;
-  Color cardColor;
-  Color cardBorderColor;
-  double cardBorderRadius;
-  double cardBorderWidth;
-  int destinationCount;
+  TripData tripData;
 
-  TripCard(
-      {super.key,
-      this.cardElevation = 2.0,
-      this.cardColor = AppColors.tripCardBg,
-      this.cardBorderRadius = 25.0,
-      this.cardBorderColor = AppColors.tripCardBorder,
-      this.cardBorderWidth = 1.0,
-      required this.destinationCount});
+  TripCard({super.key, required this.tripData});
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +19,14 @@ class TripCard extends StatelessWidget {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Card(
-          elevation: cardElevation,
-          color: cardColor,
+          elevation: tripData.cardElevation ?? 2.0,
+          color: tripData.cardColor ?? AppColors.tripCardBg,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(cardBorderRadius),
+            borderRadius:
+                BorderRadius.circular(tripData.cardBorderRadius ?? 25.0),
             side: BorderSide(
-              color: cardBorderColor,
-              width: cardBorderWidth,
+              color: tripData.cardBorderColor ?? AppColors.tripCardBorder,
+              width: tripData.cardBorderWidth ?? 1.0,
             ),
           ),
           child: Container(
@@ -44,25 +35,47 @@ class TripCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding: const EdgeInsets.only(left: 40),
+                  padding: const EdgeInsets.only(left: 35),
                   child: Row(
                     children: List.generate(
-                      destinationCount,
+                      tripData.destinationCount,
                       (index) => Column(
                         children: [
-                          const JourneyDetails(
-                            imagePath: StaticAssets.spiceJetLogo,
-                            title: 'SpiceJet',
-                            description: 'SG-532',
-                          ),
+                          if (tripData.journeyDetails.isNotNullNorEmpty() &&
+                              tripData.journeyDetails[index] != null)
+                            JourneyDetails(
+                              imagePath:
+                                  tripData.journeyDetails[index].imagePath,
+                              title: tripData.journeyDetails[index].title,
+                              description:
+                                  tripData.journeyDetails[index].description,
+                              titleTextStyle:
+                                  tripData.journeyDetails[index].titleTextStyle,
+                              descriptionTextStyle: tripData
+                                  .journeyDetails[index].descriptionTextStyle,
+                            ),
                           const SizedBox(
-                            height: 20,
+                            height: 10,
                           ),
                           SubPointDetails(
-                            pillText: '01h 45m',
-                            showRightDot: showRightDot(index, destinationCount),
-                            showLeftDot: showLeftDot(index, destinationCount),
-                            dashColor: AppColors.deepOrange,
+                            pillText:
+                                tripData.subPointDetails[index].pillData?.text,
+                            pillColor:
+                                tripData.subPointDetails[index].pillData?.color,
+                            showRightDot:
+                                showRightDot(index, tripData.destinationCount),
+                            showLeftDot:
+                                showLeftDot(index, tripData.destinationCount),
+                            dashColor:
+                                tripData.subPointDetails[index].dashColor,
+                            isLeftLineDashed: tripData
+                                    .subPointDetails[index].isLeftLineDashed ??
+                                false,
+                            isRightLineDashed: tripData
+                                    .subPointDetails[index].isRightLineDashed ??
+                                false,
+                            lineLength:
+                                tripData.subPointDetails[index].lineLength,
                           ),
                         ],
                       ),
@@ -74,15 +87,28 @@ class TripCard extends StatelessWidget {
                 ),
                 Row(
                   children: List.generate(
-                    destinationCount + 1,
+                    tripData.destinationCount + 1,
                     (index) => Container(
                       margin: EdgeInsets.only(
-                          right: (index == destinationCount) ? 0 : 195),
-                      child: const IndicatorDetails(
-                        time: '15:00',
-                        date: '23rd Jun 2023',
-                        location: 'Pune(PNQ)',
-                        place: 'Terminal 1',
+                          right:
+                              (index == tripData.destinationCount) ? 0 : 195),
+                      child: IndicatorDetails(
+                        time:
+                            tripData.indicatorDataList[index]?.time ?? '15:00',
+                        date: tripData.indicatorDataList[index]?.date ??
+                            '23rd Jun 2023',
+                        location: tripData.indicatorDataList[index]?.location ??
+                            'Pune(PNQ)',
+                        place: tripData.indicatorDataList[index]?.place ??
+                            'Terminal 1',
+                        timeTextStyle:
+                            tripData.indicatorDataList[index]?.timeTextStyle,
+                        dateTextStyle:
+                            tripData.indicatorDataList[index]?.dateTextStyle,
+                        locationTextStyle: tripData
+                            .indicatorDataList[index]?.locationTextStyle,
+                        placeTextStyle:
+                            tripData.indicatorDataList[index]?.placeTextStyle,
                       ),
                     ),
                   ),

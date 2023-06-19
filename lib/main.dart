@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/data/journey/indicator_data.dart';
+import 'package:travel_app/data/journey/trip_data.dart';
+import 'package:travel_app/repository/journey/journey_repo.dart';
 import 'package:travel_app/ui/widgets/journey/index.dart';
 import 'package:travel_app/ui/widgets/refund/index.dart';
+
+import 'data/journey/journey_detail.dart';
+import 'data/journey/sub_point_detail.dart';
 
 
 void main() {
@@ -64,6 +70,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -78,13 +86,15 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Container(
-          child: Column(
-            children: [
-              TripCard(destinationCount: 3,),
-              PolicyWidget()
-            ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Container(
+            child: Column(
+              children: [
+                TripCard(tripData: JourneyRepo.generateTripData(),),
+                RefundPolicyCard()
+              ],
+            ),
           ),
         ),
       ),

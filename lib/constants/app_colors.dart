@@ -18,4 +18,9 @@ class AppColors {
 
   //Shades of blue
   static const lightBlue = Color(0xffADD8E6);
+  static const red = Colors.red;
+
+
+  //Shades of red
+  static const lightRed = Color(0xffFFCCCB);
 }

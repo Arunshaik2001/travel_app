@@ -10,16 +10,16 @@ class SubPointDetails extends StatelessWidget {
   bool showLeftDot, showRightDot;
   Color? leftPointInnerColor, rightPointInnerColor;
   Color? leftPointOuterColor, rightPointOuterColor;
-  double lineLength;
+  double? lineLength;
   bool isLeftLineDashed, isRightLineDashed;
-  String pillText;
-  Color pillColor;
+  String? pillText;
+  Color? pillColor;
   TextStyle? pillTextStyle;
   double pillBorderRadius;
   double? leftPointOuterRadius, leftPointInnerRadius;
   double? rightPointOuterRadius, rightPointInnerRadius;
   double dashLength;
-  Color dashColor;
+  Color? dashColor;
 
   SubPointDetails(
       {this.showLeftDot = true,
@@ -40,7 +40,7 @@ class SubPointDetails extends StatelessWidget {
       this.rightPointOuterRadius,
       this.rightPointInnerRadius,
       this.dashLength = 8,
-      required this.dashColor});
+      this.dashColor = AppColors.deepOrange});
 
   @override
   Widget build(BuildContext context) {
@@ -55,33 +55,35 @@ class SubPointDetails extends StatelessWidget {
         if (isLeftLineDashed)
           DashedLineWidget(
               direction: Axis.horizontal,
-              length: lineLength,
+              length: lineLength!,
               dashLength: dashLength,
-              dashColor: dashColor),
+              dashColor: dashColor!),
         if (!isLeftLineDashed)
           LineWidget(
               isVertical: false,
-              height: lineLength,
+              height: lineLength!,
               width: 1,
-              color: dashColor), //Colors.deepOrange
-        PillWidget(
-          text: pillText, //'01h 45m'
-          color: pillColor,
-          borderRadius: pillBorderRadius,
-          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
-        ),
+              color: dashColor!),
+        if (pillText.isNotNullNorEmpty())
+          PillWidget(
+            text: pillText!, //'01h 45m'
+            color: pillColor ?? AppColors.lightBlue,
+            borderRadius: pillBorderRadius,
+            padding:
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
+          ),
         if (isRightLineDashed)
           DashedLineWidget(
               direction: Axis.horizontal,
-              length: lineLength,
+              length: lineLength!,
               dashLength: dashLength,
-              dashColor: dashColor), //Colors.deepOrange
+              dashColor: dashColor!), //Colors.deepOrange
         if (!isRightLineDashed)
           LineWidget(
               isVertical: false,
-              height: lineLength,
+              height: lineLength!,
               width: 1,
-              color: dashColor),
+              color: dashColor!),
         if (showRightDot)
           ConcentricCircleWidget(
               outerRadius: rightPointOuterRadius ?? 10,
