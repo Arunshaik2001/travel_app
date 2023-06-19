@@ -1,5 +1,6 @@
 # travel_app
 
-https://github.com/Arunshaik2001/travel_app/assets/50947867/77962e90-b94c-4e67-a6a2-824e39338b66
+[untitled.webm](https://github.com/Arunshaik2001/travel_app/assets/50947867/ee2609bb-b0fa-40bd-a814-e55d7a3531c9)
 
-Two widgets part of a travel app
+
+Two widgets are part of a travel app
