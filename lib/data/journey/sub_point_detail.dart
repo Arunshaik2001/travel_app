@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/data/journey/pill_data.dart';
+import 'package:travel_app/data/journey/index.dart';
 
-import 'indicator_data.dart';
-import 'journey_detail.dart';
 
 class SubPointDetail {
   Color? leftPointInnerColor, rightPointInnerColor;

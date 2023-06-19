@@ -1,41 +1,71 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/ui/widgets/refund/refund_policy_status.dart';
+import 'package:travel_app/constants/index.dart';
+import 'package:travel_app/ui/widgets/refund/index.dart';
+import 'package:travel_app/utils/index.dart';
+import 'package:travel_app/data/refund/index.dart';
 
 class RefundPolicyCard extends StatelessWidget {
-  const RefundPolicyCard({super.key});
+  final RefundPolicyDetail refundPolicyDetail;
+
+  const RefundPolicyCard({super.key, required this.refundPolicyDetail});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: const Color(0xffADD8E6),
-      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-      child: Column(
-        children: [
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text('Cancellation Window'),
-                Text('Charges'),
-              ],
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          margin: const EdgeInsets.all(15),
+          child: Text(
+            refundPolicyDetail.cardTitle,
+            style: refundPolicyDetail.cardTitleTextStyle,
           ),
-          Container(
-            padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                RefundPolicyStatus(policyDatesCount: 3,),
-              ],
-            ),
-          ),
-          Row(
-            children: const [
-              Text('As per local time at the property'),
+        ),
+        Container(
+          color: refundPolicyDetail.cardColor ?? AppColors.lightBlue,
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    refundPolicyDetail.title,
+                    style: refundPolicyDetail.titleTextStyle,
+                  ),
+                  Text(
+                    refundPolicyDetail.description,
+                    style: refundPolicyDetail.descriptionTextStyle,
+                  ),
+                ],
+              ),
+              Container(
+                padding: const EdgeInsets.only(top: 10, bottom: 10),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    RefundPolicyStatus(
+                      refundPolicyDetail: refundPolicyDetail,
+                    ),
+                  ],
+                ),
+              ),
+              if (refundPolicyDetail.bottomText.isNotNullNorEmpty())
+                Container(
+                  margin: const EdgeInsets.only(top: 5),
+                  child: Row(
+                    children: [
+                      Text(
+                        refundPolicyDetail.bottomText!,
+                        style: refundPolicyDetail.bottomTextStyle,
+                      ),
+                    ],
+                  ),
+                ),
             ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

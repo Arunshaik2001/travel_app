@@ -1,14 +1,6 @@
-import 'dart:math';
-
 import 'package:travel_app/constants/index.dart';
-import 'package:travel_app/constants/static_assets.dart';
-import 'package:travel_app/data/journey/pill_data.dart';
+import '../../data/journey/index.dart';
 
-import '../../constants/app_colors.dart';
-import '../../data/journey/indicator_data.dart';
-import '../../data/journey/journey_detail.dart';
-import '../../data/journey/sub_point_detail.dart';
-import '../../data/journey/trip_data.dart';
 
 class JourneyRepo {
   static TripData generateTripData() {
@@ -31,7 +23,7 @@ class JourneyRepo {
   static List<SubPointDetail> _generateSubPointData() {
     List<SubPointDetail> subPointDetails = [];
 
-    PillData pillData0 = PillData(text: '01 45m');
+    PillData pillData0 = PillData(text: Strings.ZERO_ONE_45_M);
 
     subPointDetails.add(SubPointDetail(
       pillData: pillData0,
@@ -39,7 +31,7 @@ class JourneyRepo {
       dashColor: AppColors.lightBlue,
     ));
 
-    PillData pillData1 = PillData(text: '04 20m', color: AppColors.lightRed);
+    PillData pillData1 = PillData(text: Strings.ZERO_FOUR_20_M , color: AppColors.lightRed);
 
     subPointDetails.add(SubPointDetail(
         pillData: pillData1,
@@ -48,7 +40,7 @@ class JourneyRepo {
         isLeftLineDashed: true,
         isRightLineDashed: true));
 
-    PillData pillData2 = PillData(text: '01 45m');
+    PillData pillData2 = PillData(text: Strings.ZERO_ONE_45_M);
 
     subPointDetails.add(SubPointDetail(
       pillData: pillData2,
@@ -63,28 +55,28 @@ class JourneyRepo {
     List<IndicatorData> indicatorDataList = [];
 
     indicatorDataList.add(IndicatorData(
-        time: '15:00',
-        date: '30th Jun 2023',
-        location: 'Pune(PNQ)',
-        place: 'Terminal 1'));
+        time: Strings.FIFTEEN_COLON_0,
+        date: Strings.THIRTY_JUN_23,
+        location: Strings.Pune,
+        place: Strings.TERMINAL_1));
 
     indicatorDataList.add(IndicatorData(
-        time: '17:35',
-        date: '30th Jun 2023',
-        location: 'Bangalore(BLR)',
-        place: 'Terminal 1'));
+        time: Strings.SEVENTEEN_COLON_35,
+        date: Strings.THIRTY_JUN_23,
+        location: Strings.Bangalore,
+        place: Strings.TERMINAL_1));
 
     indicatorDataList.add(IndicatorData(
-        time: '21:55',
-        date: '30th Jun 2023',
-        location: 'Bangalore(BLR)',
-        place: 'Terminal 1'));
+        time: Strings.TWENTY_ONE_COLON_55,
+        date: Strings.THIRTY_JUN_23,
+        location: Strings.Bangalore,
+        place: Strings.TERMINAL_1));
 
     indicatorDataList.add(IndicatorData(
-        time: '00:40',
-        date: '1st July 2023',
-        location: 'Delhi(DEL)',
-        place: 'Terminal 1'));
+        time: Strings.ZERO_COLON_40,
+        date: Strings.FIRST_July_23,
+        location: Strings.Delhi,
+        place: Strings.TERMINAL_1));
 
     return indicatorDataList;
   }
@@ -94,23 +86,23 @@ class JourneyRepo {
 
     journeyDetails.add(JourneyDetail(
       imagePath: StaticAssets.spiceJetLogo,
-      title: 'SpiceJet',
-      description: 'SG-53',
+      title: Strings.SpiceJet,
+      description: Strings.SG_53,
       titleTextStyle: TextStyles.journeyDetailTitleStyle,
       descriptionTextStyle: TextStyles.journeyDetailDescriptionStyle,
     ));
 
     journeyDetails.add(JourneyDetail(
-      title: 'Layover in\nbangalore',
-      description: '(BLR)',
+      title: Strings.Layover_bangalore,
+      description: Strings.BLR,
       titleTextStyle: TextStyles.journeyDetailRedTitleStyle,
       descriptionTextStyle: TextStyles.journeyDetailRedDescriptionStyle,
     ));
 
     journeyDetails.add(JourneyDetail(
       imagePath: StaticAssets.spiceJetLogo,
-      title: 'SpiceJet',
-      description: 'SG-198',
+      title: Strings.SpiceJet,
+      description: Strings.SG_198,
       titleTextStyle: TextStyles.journeyDetailTitleStyle,
       descriptionTextStyle: TextStyles.journeyDetailDescriptionStyle,
     ));

@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/constants/app_colors.dart';
-import 'package:travel_app/constants/static_assets.dart';
-import 'package:travel_app/ui/widgets/journey/sub_point_details.dart';
-import 'package:travel_app/utils/list_utils.dart';
-
-import '../../../data/journey/trip_data.dart';
-import 'indicator_details.dart';
-import 'journey-details.dart';
+import 'package:travel_app/constants/index.dart';
+import 'package:travel_app/ui/widgets/journey/index.dart';
+import 'package:travel_app/utils/index.dart';
+import 'package:travel_app/data/journey/index.dart';
 
 class TripCard extends StatelessWidget {
   TripData tripData;
@@ -15,6 +11,9 @@ class TripCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (tripData.destinationCount <= 0) {
+      return const SizedBox.shrink();
+    }
     return IntrinsicHeight(
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -93,22 +92,18 @@ class TripCard extends StatelessWidget {
                           right:
                               (index == tripData.destinationCount) ? 0 : 195),
                       child: IndicatorDetails(
-                        time:
-                            tripData.indicatorDataList[index]?.time ?? '15:00',
-                        date: tripData.indicatorDataList[index]?.date ??
-                            '23rd Jun 2023',
-                        location: tripData.indicatorDataList[index]?.location ??
-                            'Pune(PNQ)',
-                        place: tripData.indicatorDataList[index]?.place ??
-                            'Terminal 1',
+                        time: tripData.indicatorDataList[index].time,
+                        date: tripData.indicatorDataList[index].date,
+                        location: tripData.indicatorDataList[index].location,
+                        place: tripData.indicatorDataList[index].place,
                         timeTextStyle:
-                            tripData.indicatorDataList[index]?.timeTextStyle,
+                            tripData.indicatorDataList[index].timeTextStyle,
                         dateTextStyle:
-                            tripData.indicatorDataList[index]?.dateTextStyle,
-                        locationTextStyle: tripData
-                            .indicatorDataList[index]?.locationTextStyle,
+                            tripData.indicatorDataList[index].dateTextStyle,
+                        locationTextStyle:
+                            tripData.indicatorDataList[index].locationTextStyle,
                         placeTextStyle:
-                            tripData.indicatorDataList[index]?.placeTextStyle,
+                            tripData.indicatorDataList[index].placeTextStyle,
                       ),
                     ),
                   ),

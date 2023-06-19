@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/constants/app_colors.dart';
-import 'package:travel_app/ui/commons/concentric_circle_widget.dart';
-import 'package:travel_app/ui/commons/dashed_line.dart';
+import 'package:travel_app/constants/index.dart';
 import 'package:travel_app/ui/commons/index.dart';
-import 'package:travel_app/ui/widgets/journey/pill.dart';
-import 'package:travel_app/utils/string_utils.dart';
+import 'package:travel_app/ui/widgets/journey/index.dart';
+import 'package:travel_app/utils/index.dart';
 
 class SubPointDetails extends StatelessWidget {
   bool showLeftDot, showRightDot;
@@ -22,7 +20,7 @@ class SubPointDetails extends StatelessWidget {
   Color? dashColor;
 
   SubPointDetails(
-      {this.showLeftDot = true,
+      {super.key, this.showLeftDot = true,
       this.showRightDot = true,
       this.leftPointInnerColor,
       this.rightPointInnerColor,

@@ -15,6 +15,7 @@ class AppColors {
   //Shades of green
   static const green = Colors.green;
   static const lightGreen = Colors.lightGreen;
+  static const limeGreen = Color(0xff90ee90);
 
   //Shades of blue
   static const lightBlue = Color(0xffADD8E6);

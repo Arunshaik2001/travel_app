@@ -1,9 +1,6 @@
 import 'dart:ui';
 
-import 'package:travel_app/data/journey/sub_point_detail.dart';
-
-import 'indicator_data.dart';
-import 'journey_detail.dart';
+import 'package:travel_app/data/journey/index.dart';
 
 class TripData {
   List<JourneyDetail> journeyDetails;

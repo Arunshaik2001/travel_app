@@ -1,8 +1,7 @@
 import 'dart:core';
-
 import 'package:flutter/material.dart';
 import 'package:travel_app/constants/index.dart';
-import 'package:travel_app/utils/string_utils.dart';
+import 'package:travel_app/utils/index.dart';
 
 class JourneyDetails extends StatelessWidget {
   final String? imagePath;
@@ -23,7 +22,7 @@ class JourneyDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 80,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -42,9 +41,13 @@ class JourneyDetails extends StatelessWidget {
                   width: 5,
                 ),
               if (title.isNotNullNorEmpty())
-                Text(
-                  title!,
-                  style: titleTextStyle ?? TextStyles.journeyDetailTitleStyle,
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.center,
+                  child: Text(
+                    title!,
+                    style: titleTextStyle ?? TextStyles.journeyDetailTitleStyle,
+                  ),
                 ), //'SpiceJet'
             ],
           ),

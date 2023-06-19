@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/constants/index.dart';
-import 'package:travel_app/utils/string_utils.dart';
+import 'package:travel_app/utils/index.dart';
 
 class IndicatorDetails extends StatelessWidget {
   final String? time;
