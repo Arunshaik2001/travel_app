@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+///renders a straight line widget.
+///
+/// parameters:
+/// **isVertical** - is the orientation of the line.
+/// **height**     - is the length of the line.
+/// **width**      - is the width of the line.
+/// **color**      - is the color of the line.
 class LineWidget extends StatelessWidget {
   final bool isVertical;
   final double height;

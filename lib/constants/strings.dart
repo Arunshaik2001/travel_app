@@ -1,5 +1,5 @@
 
-
+///All constant string values are defined here.
 class Strings {
   ///refund policy card strings
   static const Till_05th_Jun_23_2_00 = 'Till 05th Jun\'23, 02:00PM';

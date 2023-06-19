@@ -2,6 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/constants/index.dart';
 import 'package:travel_app/ui/commons/index.dart';
 
+///render refund status date widget.
+///
+/// parameters:
+/// **showMainTopLine**          - is the check whether to show top line.
+/// **showIndicatorTopLine**     - is the check whether to show indicator top line.
+/// **showIndicatorBottomLine**  - is the check whether to show indicator bottom line.
+/// **crossAxisAlignment**       - is the crossAxisAlignment of the row.
+/// **lineColor**                - is the line color.
+/// **lineHeight**               - is the line height.
+/// **lineWidth**                - is the line width.
+/// **indicatorInnerColor**      - is the indicator inner color.
+/// **indicatorOuterColor**      - is the indicator outer color.
+/// **title**                    - is the title of refund status.
+/// **description**              - is the description of refund status
+/// **titleTextStyle**           - is the title text style of refund status.
+/// **descriptionTextStyle**     - is the description text style of refund status.
 class RefundDateStatus extends StatelessWidget {
   bool showMainTopLine;
   bool showIndicatorTopLine;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+///colors used in whole app are defined here
 class AppColors {
   //Shades of orange
   static const deepOrange = Colors.deepOrange;
