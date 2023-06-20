@@ -22,7 +22,7 @@ class PillWidget extends StatelessWidget {
     required this.text,
     required this.color,
     this.borderRadius = 20.0,
-    this.pillWidth = 100,
+    this.pillWidth = 150,
     this.textStyle,
     this.padding = const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
   });
@@ -30,7 +30,6 @@ class PillWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: pillWidth,
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(borderRadius),

@@ -37,6 +37,7 @@ class JourneyDetails extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (imagePath.isNotNullNorEmpty())
@@ -50,13 +51,10 @@ class JourneyDetails extends StatelessWidget {
                   width: 5,
                 ),
               if (title.isNotNullNorEmpty())
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  alignment: Alignment.center,
-                  child: Text(
-                    title!,
-                    style: titleTextStyle ?? TextStyles.journeyDetailTitleStyle,
-                  ),
+                Text(
+                  title!,
+                  style: titleTextStyle ?? TextStyles.journeyDetailTitleStyle,
+                  textAlign: TextAlign.center,
                 ), //'SpiceJet'
             ],
           ),
@@ -65,9 +63,14 @@ class JourneyDetails extends StatelessWidget {
               height: 2,
             ),
           if (description.isNotNullNorEmpty())
-            Text(
-              description!,
-              style: descriptionTextStyle ?? TextStyles.journeyDetailDescriptionStyle,
+            Row(
+              children: [
+                Text(
+                  description!,
+                  textAlign: TextAlign.center,
+                  style: descriptionTextStyle ?? TextStyles.journeyDetailDescriptionStyle,
+                ),
+              ],
             ),
           //'SG-322'
         ],

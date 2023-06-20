@@ -6,21 +6,137 @@ class RefundRepo {
     List<RefundDateStatusDetail> refundDateList = [];
 
     refundDateList.add(RefundDateStatusDetail(
-        title: Strings.Till_05th_Jun_23_2_00,
-        description: Strings.zero_dollar,
-        indicatorInnerColor: AppColors.limeGreen,
-        indicatorOuterColor: AppColors.green,
-        titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
-        descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle));
+      title: Strings.Till_05th_Jun_23_2_00,
+      description: Strings.zero_dollar,
+      indicatorInnerColor: AppColors.limeGreen,
+      indicatorOuterColor: AppColors.green,
+      titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
+      descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle,
+      lineHeight: 50,
+      innerBottomLineHeight: 50,
+      innerTopLineHeight: 50,
+    ));
 
     refundDateList.add(RefundDateStatusDetail(
-        title: Strings.From_05th_Jun_23_2_00,
-        description:
-            Strings.hundered_percent_of_the_booking_mount_will_be_charged,
-        indicatorInnerColor: AppColors.lightRed,
-        indicatorOuterColor: AppColors.red,
-        titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
-        descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle));
+      title: Strings.Till_05th_Jun_23_2_00,
+      description: Strings.zero_dollar,
+      indicatorInnerColor: AppColors.limeGreen,
+      indicatorOuterColor: AppColors.green,
+      titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
+      descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle,
+      lineHeight: 50,
+      innerBottomLineHeight: 50,
+      innerTopLineHeight: 50,
+    ));
+
+    refundDateList.add(RefundDateStatusDetail(
+      title: Strings.Till_05th_Jun_23_2_00,
+      description: Strings.zero_dollar,
+      indicatorInnerColor: AppColors.limeGreen,
+      indicatorOuterColor: AppColors.green,
+      titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
+      descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle,
+      lineHeight: 50,
+      innerBottomLineHeight: 50,
+      innerTopLineHeight: 50,
+    ));
+
+    refundDateList.add(RefundDateStatusDetail(
+      title: Strings.Till_05th_Jun_23_2_00,
+      description: Strings.zero_dollar,
+      indicatorInnerColor: AppColors.limeGreen,
+      indicatorOuterColor: AppColors.green,
+      titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
+      descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle,
+      lineHeight: 50,
+      innerBottomLineHeight: 50,
+      innerTopLineHeight: 50,
+    ));
+
+    refundDateList.add(RefundDateStatusDetail(
+      title: Strings.Till_05th_Jun_23_2_00,
+      description: Strings.zero_dollar,
+      indicatorInnerColor: AppColors.limeGreen,
+      indicatorOuterColor: AppColors.green,
+      titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
+      descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle,
+      lineHeight: 50,
+      innerBottomLineHeight: 50,
+      innerTopLineHeight: 50,
+    ));
+
+    refundDateList.add(RefundDateStatusDetail(
+      title: Strings.Till_05th_Jun_23_2_00,
+      description: Strings.zero_dollar,
+      indicatorInnerColor: AppColors.limeGreen,
+      indicatorOuterColor: AppColors.green,
+      titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
+      descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle,
+      lineHeight: 50,
+      innerBottomLineHeight: 50,
+      innerTopLineHeight: 50,
+    ));
+
+    refundDateList.add(RefundDateStatusDetail(
+      title: Strings.Till_05th_Jun_23_2_00,
+      description: Strings.zero_dollar,
+      indicatorInnerColor: AppColors.limeGreen,
+      indicatorOuterColor: AppColors.green,
+      titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
+      descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle,
+      lineHeight: 50,
+      innerBottomLineHeight: 50,
+      innerTopLineHeight: 50,
+    ));
+
+    refundDateList.add(RefundDateStatusDetail(
+      title: Strings.Till_05th_Jun_23_2_00,
+      description: Strings.zero_dollar,
+      indicatorInnerColor: AppColors.limeGreen,
+      indicatorOuterColor: AppColors.green,
+      titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
+      descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle,
+      lineHeight: 50,
+      innerBottomLineHeight: 50,
+      innerTopLineHeight: 50,
+    ));
+
+    refundDateList.add(RefundDateStatusDetail(
+      title: Strings.Till_05th_Jun_23_2_00,
+      description: Strings.zero_dollar,
+      indicatorInnerColor: AppColors.limeGreen,
+      indicatorOuterColor: AppColors.green,
+      titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
+      descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle,
+      lineHeight: 50,
+      innerBottomLineHeight: 50,
+      innerTopLineHeight: 50,
+    ));
+
+    refundDateList.add(RefundDateStatusDetail(
+      title: Strings.Till_05th_Jun_23_2_00,
+      description: Strings.zero_dollar,
+      indicatorInnerColor: AppColors.limeGreen,
+      indicatorOuterColor: AppColors.green,
+      titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
+      descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle,
+      lineHeight: 50,
+      innerBottomLineHeight: 50,
+      innerTopLineHeight: 50,
+    ));
+
+    refundDateList.add(RefundDateStatusDetail(
+      title: Strings.From_05th_Jun_23_2_00,
+      description:
+          Strings.hundered_percent_of_the_booking_mount_will_be_charged,
+      indicatorInnerColor: AppColors.lightRed,
+      indicatorOuterColor: AppColors.red,
+      titleTextStyle: TextStyles.refundPolicyStatusTitleStyle,
+      descriptionTextStyle: TextStyles.refundPolicyStatusDescriptionStyle,
+      lineHeight: 50,
+      innerBottomLineHeight: 50,
+      innerTopLineHeight: 50,
+    ));
 
     RefundPolicyDetail refundPolicyDetail = RefundPolicyDetail(
         title: Strings.Cancellation_Window,

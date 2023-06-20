@@ -29,13 +29,19 @@ class RefundPolicyCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    refundPolicyDetail.title,
-                    style: refundPolicyDetail.titleTextStyle,
+                  Flexible(
+                    child: Text(
+                      refundPolicyDetail.title,
+                      style: refundPolicyDetail.titleTextStyle,
+                      textAlign: TextAlign.start,
+                    ),
                   ),
-                  Text(
-                    refundPolicyDetail.description,
-                    style: refundPolicyDetail.descriptionTextStyle,
+                  Flexible(
+                    child: Text(
+                      refundPolicyDetail.description,
+                      style: refundPolicyDetail.descriptionTextStyle,
+                      textAlign: TextAlign.end,
+                    ),
                   ),
                 ],
               ),
@@ -55,9 +61,11 @@ class RefundPolicyCard extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 5),
                   child: Row(
                     children: [
-                      Text(
-                        refundPolicyDetail.bottomText!,
-                        style: refundPolicyDetail.bottomTextStyle,
+                      Flexible(
+                        child: Text(
+                          refundPolicyDetail.bottomText!,
+                          style: refundPolicyDetail.bottomTextStyle,
+                        ),
                       ),
                     ],
                   ),

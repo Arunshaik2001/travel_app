@@ -10,15 +10,20 @@ class RefundDateStatusDetail {
   String description;
   TextStyle? titleTextStyle;
   TextStyle? descriptionTextStyle;
+  double? innerTopLineHeight;
+  double? innerBottomLineHeight;
 
-  RefundDateStatusDetail(
-      {required this.title,
-      required this.description,
-      this.lineColor,
-      this.lineHeight,
-      this.lineWidth,
-      this.indicatorInnerColor,
-      this.indicatorOuterColor,
-      this.titleTextStyle,
-      this.descriptionTextStyle});
+  RefundDateStatusDetail({
+    required this.title,
+    required this.description,
+    this.lineColor,
+    this.lineHeight,
+    this.lineWidth,
+    this.indicatorInnerColor,
+    this.indicatorOuterColor,
+    this.titleTextStyle,
+    this.descriptionTextStyle,
+    this.innerBottomLineHeight,
+    this.innerTopLineHeight,
+  });
 }

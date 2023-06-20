@@ -29,10 +29,17 @@ class RefundPolicyStatus extends StatelessWidget {
                       .refundDateList[index].indicatorInnerColor,
                   indicatorOuterColor: refundPolicyDetail
                       .refundDateList[index].indicatorOuterColor,
-                  titleTextStyle: refundPolicyDetail
-                      .refundDateList[index].titleTextStyle,
+                  titleTextStyle:
+                      refundPolicyDetail.refundDateList[index].titleTextStyle,
                   descriptionTextStyle: refundPolicyDetail
                       .refundDateList[index].descriptionTextStyle,
+                  lineHeight:
+                      refundPolicyDetail.refundDateList[index].lineHeight,
+                  lineColor: refundPolicyDetail.refundDateList[index].lineColor,
+                  innerBottomLineHeight: refundPolicyDetail
+                      .refundDateList[index].innerBottomLineHeight,
+                  innerTopLineHeight: refundPolicyDetail
+                      .refundDateList[index].innerTopLineHeight,
                 )),
       ),
     );

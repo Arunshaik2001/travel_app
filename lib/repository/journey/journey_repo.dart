@@ -1,6 +1,7 @@
+import 'dart:ffi';
+
 import 'package:travel_app/constants/index.dart';
 import '../../data/journey/index.dart';
-
 
 class JourneyRepo {
   static TripData generateTripData() {
@@ -31,10 +32,61 @@ class JourneyRepo {
       dashColor: AppColors.lightBlue,
     ));
 
-    PillData pillData1 = PillData(text: Strings.ZERO_FOUR_20_M , color: AppColors.lightRed);
+    PillData pillData1 =
+        PillData(text: Strings.ZERO_FOUR_20_M, color: AppColors.lightRed);
 
     subPointDetails.add(SubPointDetail(
         pillData: pillData1,
+        dashColor: AppColors.deepOrange,
+        lineLength: 100,
+        isLeftLineDashed: true,
+        isRightLineDashed: true));
+
+    PillData pillData3 =
+        PillData(text: Strings.ZERO_FOUR_20_M, color: AppColors.lightRed);
+
+    subPointDetails.add(SubPointDetail(
+        pillData: pillData3,
+        dashColor: AppColors.deepOrange,
+        lineLength: 100,
+        isLeftLineDashed: true,
+        isRightLineDashed: true));
+
+    PillData pillData4 =
+        PillData(text: Strings.ZERO_FOUR_20_M, color: AppColors.lightRed);
+
+    subPointDetails.add(SubPointDetail(
+        pillData: pillData3,
+        dashColor: AppColors.deepOrange,
+        lineLength: 100,
+        isLeftLineDashed: true,
+        isRightLineDashed: true));
+
+    PillData pillData5 =
+        PillData(text: Strings.ZERO_FOUR_20_M, color: AppColors.lightRed);
+
+    subPointDetails.add(SubPointDetail(
+        pillData: pillData3,
+        dashColor: AppColors.deepOrange,
+        lineLength: 100,
+        isLeftLineDashed: true,
+        isRightLineDashed: true));
+
+    PillData pillData6 =
+        PillData(text: Strings.ZERO_FOUR_20_M, color: AppColors.lightRed);
+
+    subPointDetails.add(SubPointDetail(
+        pillData: pillData3,
+        dashColor: AppColors.deepOrange,
+        lineLength: 100,
+        isLeftLineDashed: true,
+        isRightLineDashed: true));
+
+    PillData pillData7 =
+        PillData(text: Strings.ZERO_FOUR_20_M, color: AppColors.lightRed);
+
+    subPointDetails.add(SubPointDetail(
+        pillData: pillData3,
         dashColor: AppColors.deepOrange,
         lineLength: 100,
         isLeftLineDashed: true,
@@ -46,6 +98,12 @@ class JourneyRepo {
       pillData: pillData2,
       dashColor: AppColors.lightBlue,
       lineLength: 95,
+    ));
+
+    subPointDetails.add(SubPointDetail(
+      dashColor: AppColors.lightBlue,
+      lineLength: 95,
+      pillData: pillData2,
     ));
 
     return subPointDetails;
@@ -62,6 +120,36 @@ class JourneyRepo {
 
     indicatorDataList.add(IndicatorData(
         time: Strings.SEVENTEEN_COLON_35,
+        date: Strings.THIRTY_JUN_23,
+        location: Strings.Bangalore,
+        place: Strings.TERMINAL_1));
+
+    indicatorDataList.add(IndicatorData(
+        time: Strings.TWENTY_ONE_COLON_55,
+        date: Strings.THIRTY_JUN_23,
+        location: Strings.Bangalore,
+        place: Strings.TERMINAL_1));
+
+    indicatorDataList.add(IndicatorData(
+        time: Strings.TWENTY_ONE_COLON_55,
+        date: Strings.THIRTY_JUN_23,
+        location: Strings.Bangalore,
+        place: Strings.TERMINAL_1));
+
+    indicatorDataList.add(IndicatorData(
+        time: Strings.TWENTY_ONE_COLON_55,
+        date: Strings.THIRTY_JUN_23,
+        location: Strings.Bangalore,
+        place: Strings.TERMINAL_1));
+
+    indicatorDataList.add(IndicatorData(
+        time: Strings.TWENTY_ONE_COLON_55,
+        date: Strings.THIRTY_JUN_23,
+        location: Strings.Bangalore,
+        place: Strings.TERMINAL_1));
+
+    indicatorDataList.add(IndicatorData(
+        time: Strings.TWENTY_ONE_COLON_55,
         date: Strings.THIRTY_JUN_23,
         location: Strings.Bangalore,
         place: Strings.TERMINAL_1));
@@ -100,11 +188,52 @@ class JourneyRepo {
     ));
 
     journeyDetails.add(JourneyDetail(
+      title: Strings.Layover_bangalore,
+      description: Strings.BLR,
+      titleTextStyle: TextStyles.journeyDetailRedTitleStyle,
+      descriptionTextStyle: TextStyles.journeyDetailRedDescriptionStyle,
+    ));
+
+    journeyDetails.add(JourneyDetail(
+      title: Strings.Layover_bangalore,
+      description: Strings.BLR,
+      titleTextStyle: TextStyles.journeyDetailRedTitleStyle,
+      descriptionTextStyle: TextStyles.journeyDetailRedDescriptionStyle,
+    ));
+
+    journeyDetails.add(JourneyDetail(
+      title: Strings.Layover_bangalore,
+      description: Strings.BLR,
+      titleTextStyle: TextStyles.journeyDetailRedTitleStyle,
+      descriptionTextStyle: TextStyles.journeyDetailRedDescriptionStyle,
+    ));
+
+    journeyDetails.add(JourneyDetail(
+      title: Strings.Layover_bangalore,
+      description: Strings.BLR,
+      titleTextStyle: TextStyles.journeyDetailRedTitleStyle,
+      descriptionTextStyle: TextStyles.journeyDetailRedDescriptionStyle,
+    ));
+
+    journeyDetails.add(JourneyDetail(
+      title: Strings.Layover_bangalore,
+      description: Strings.BLR,
+      titleTextStyle: TextStyles.journeyDetailRedTitleStyle,
+      descriptionTextStyle: TextStyles.journeyDetailRedDescriptionStyle,
+    ));
+
+    journeyDetails.add(JourneyDetail(
       imagePath: StaticAssets.spiceJetLogo,
       title: Strings.SpiceJet,
       description: Strings.SG_198,
       titleTextStyle: TextStyles.journeyDetailTitleStyle,
       descriptionTextStyle: TextStyles.journeyDetailDescriptionStyle,
+    ));
+
+    journeyDetails.add(JourneyDetail(
+      imagePath: null,
+      title: '',
+      description: '',
     ));
 
     return journeyDetails;

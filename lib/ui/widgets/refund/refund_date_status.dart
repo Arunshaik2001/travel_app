@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/constants/index.dart';
 import 'package:travel_app/ui/commons/index.dart';
+import 'package:travel_app/ui/commons/widget_size.dart';
 
 ///render refund status date widget.
 ///
@@ -18,13 +19,13 @@ import 'package:travel_app/ui/commons/index.dart';
 /// **description**              - is the description of refund status
 /// **titleTextStyle**           - is the title text style of refund status.
 /// **descriptionTextStyle**     - is the description text style of refund status.
-class RefundDateStatus extends StatelessWidget {
+class RefundDateStatus extends StatefulWidget {
   bool showMainTopLine;
   bool showIndicatorTopLine;
   bool showIndicatorBottomLine;
   CrossAxisAlignment crossAxisAlignment;
   Color? lineColor;
-  double lineHeight;
+  double? lineHeight;
   double lineWidth;
   Color? indicatorInnerColor;
   Color? indicatorOuterColor;
@@ -32,28 +33,40 @@ class RefundDateStatus extends StatelessWidget {
   String description;
   TextStyle? titleTextStyle;
   TextStyle? descriptionTextStyle;
+  double? innerTopLineHeight;
+  double? innerBottomLineHeight;
 
-  RefundDateStatus(
-      {super.key,
-      required this.title,
-      required this.description,
-      this.showMainTopLine = true,
-      this.showIndicatorTopLine = true,
-      this.showIndicatorBottomLine = true,
-      this.crossAxisAlignment = CrossAxisAlignment.center,
-      this.lineColor,
-      this.lineHeight = 45,
-      this.lineWidth = 3,
-      this.indicatorInnerColor,
-      this.indicatorOuterColor,
-      this.titleTextStyle,
-      this.descriptionTextStyle});
+  RefundDateStatus({
+    super.key,
+    required this.title,
+    required this.description,
+    this.showMainTopLine = true,
+    this.showIndicatorTopLine = true,
+    this.showIndicatorBottomLine = true,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.lineColor,
+    this.lineHeight,
+    this.lineWidth = 3,
+    this.indicatorInnerColor,
+    this.indicatorOuterColor,
+    this.titleTextStyle,
+    this.descriptionTextStyle,
+    this.innerTopLineHeight,
+    this.innerBottomLineHeight,
+  });
+
+  @override
+  State<RefundDateStatus> createState() => _RefundDateStatusState();
+}
+
+class _RefundDateStatusState extends State<RefundDateStatus> {
+  Size? textSize;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (showMainTopLine)
+        if (widget.showMainTopLine)
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -61,62 +74,68 @@ class RefundDateStatus extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 6),
                 child: LineWidget(
                     isVertical: true,
-                    height: lineHeight,
-                    width: lineWidth,
-                    color: lineColor ?? Colors.green),
+                    height: widget.lineHeight ?? 45,
+                    width: widget.lineWidth,
+                    color: widget.lineColor ?? Colors.green),
               ),
             ],
           ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: crossAxisAlignment,
+          crossAxisAlignment: widget.crossAxisAlignment,
           children: [
             Column(
               children: [
-                if (showIndicatorTopLine)
+                if (widget.showIndicatorTopLine)
                   LineWidget(
                       isVertical: true,
-                      height: 10,
+                      height: textSize != null ? ((textSize!.height)/ 2) : 10,
                       width: 3,
-                      color: lineColor ?? Colors.green),
+                      color: widget.lineColor ?? Colors.green),
                 ConcentricCircleWidget(
                   outerRadius: 10,
                   innerRadius: 15,
-                  outerColor: indicatorOuterColor ?? AppColors.red,
-                  innerColor: indicatorInnerColor ?? AppColors.lightRed,
+                  outerColor: widget.indicatorOuterColor ?? AppColors.red,
+                  innerColor: widget.indicatorInnerColor ?? AppColors.lightRed,
                 ),
-                if (showIndicatorBottomLine)
+                if (widget.showIndicatorBottomLine)
                   LineWidget(
                       isVertical: true,
-                      height: 10,
+                      height: textSize != null ? ((textSize!.height)/ 2) : 10,
                       width: 3,
-                      color: lineColor ?? Colors.green)
+                      color: widget.lineColor ?? Colors.green)
               ],
             ),
-            Expanded(
-              child: Container(
-                margin: const EdgeInsets.only(left: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: crossAxisAlignment,
-                  children: [
-                    Flexible(
-                      child: Text(
-                        title,
-                        style: titleTextStyle,
-                      ),
+            WidgetSize(
+                onChange: (Size size) {
+                  setState(() {
+                    textSize = size;
+                  });
+                },
+                child: Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(left: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: widget.crossAxisAlignment,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            widget.title,
+                            style: widget.titleTextStyle,
+                          ),
+                        ),
+                        Flexible(
+                          child: Text(
+                            widget.description,
+                            textAlign: TextAlign.end,
+                            style: widget.descriptionTextStyle,
+                          ),
+                        ),
+                      ],
                     ),
-                    Flexible(
-                      child: Text(
-                        description,
-                        textAlign: TextAlign.end,
-                        style: descriptionTextStyle,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
+                  ),
+                ))
           ],
         )
       ],
