@@ -167,10 +167,10 @@ class _SubPointDetailsState extends State<SubPointDetails> {
             innerRadius: widget.leftPointInnerRadius,
             dashLength: widget.dashLength,
             leftDashColor: widget.dashColor!,
-            rightDashColor: widget.indicatorRightDashColor!,
+            rightDashColor: Colors.transparent,
             isLeftLineDashed: widget.isLeftLineDashed!,
             showLeftLine: showLeftIndicatorLine(widget.index, widget.listCount),
-            showRightLine: false,
+            showRightLine: true,
             crossAxisAlignment:
             setIndicatorCrossAxis(widget.index, widget.listCount),
           ),
