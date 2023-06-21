@@ -52,7 +52,7 @@ class JourneyDetails extends StatelessWidget {
                 ),
               if (title.isNotNullNorEmpty())
                 Text(
-                  title!,
+                  title!.replaceAll("\n", ""),
                   style: titleTextStyle ?? TextStyles.journeyDetailTitleStyle,
                   textAlign: TextAlign.center,
                 ), //'SpiceJet'
@@ -66,7 +66,7 @@ class JourneyDetails extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  description!,
+                  description!.replaceAll("\n", ""),
                   textAlign: TextAlign.center,
                   style: descriptionTextStyle ?? TextStyles.journeyDetailDescriptionStyle,
                 ),
