@@ -158,12 +158,13 @@ class _TripCardState extends State<TripCard> {
   }
 
   double calculateLeftGap(int index, int listCount) {
+    if(index == listCount-1){
+      return 0;
+    }
     if(indicatorSize != null) {
       return indicatorSize!.width;
     }
-    else if(index == listCount-1){
-      return 0;
-    }
+
     if((textSize?.width ?? 0) <= 85){
       return max((subPointSize?.width ?? 0 - (textSize?.width ?? 0)) / 2, 0);
     }
