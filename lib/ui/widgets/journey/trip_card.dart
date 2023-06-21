@@ -186,6 +186,9 @@ class _TripCardState extends State<TripCard> {
     if (index > 0) {
       return widget.tripData.subPointDetails[index - 1].dashColor;
     }
+    if(index == 0){
+      return Colors.transparent;
+    }
     return widget.tripData.subPointDetails[index].dashColor;
   }
 }

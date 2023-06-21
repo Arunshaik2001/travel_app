@@ -188,7 +188,7 @@ class _SubPointDetailsState extends State<SubPointDetails> {
 
   CrossAxisAlignment setIndicatorCrossAxis(index, listCount) {
     if (index == 0) {
-      return CrossAxisAlignment.end;
+      return CrossAxisAlignment.center;
     } else if (index == listCount - 1) {
       return CrossAxisAlignment.center;
     }
@@ -203,7 +203,7 @@ class _SubPointDetailsState extends State<SubPointDetails> {
   }
 
   bool showLeftIndicatorLine(index, listCount) {
-    if (index > 0 && index <= listCount - 1) {
+    if (index >= 0 && index <= listCount - 1) {
       return true;
     }
     return false;
