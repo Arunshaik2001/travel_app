@@ -38,7 +38,7 @@ class PillWidget extends StatelessWidget {
         padding: padding,
         child: Center(
           child: Text(
-            text,
+            text.replaceAll("\n", ""),
             style: textStyle ?? TextStyles.pillTextStyle,
           ),
         ),
