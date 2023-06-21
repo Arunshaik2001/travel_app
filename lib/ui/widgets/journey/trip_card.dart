@@ -44,7 +44,7 @@ class _TripCardState extends State<TripCard> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
-                widget.tripData.destinationCount-1,
+                widget.tripData.destinationCount,
                 (index) => Column(
                   children: [
                     if (widget.tripData.journeyDetails.isNotNullNorEmpty())

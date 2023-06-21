@@ -100,11 +100,11 @@ class JourneyRepo {
       lineLength: 95,
     ));
 
-    subPointDetails.add(SubPointDetail(
-      dashColor: AppColors.lightBlue,
-      lineLength: 95,
-      pillData: pillData2,
-    ));
+    // subPointDetails.add(SubPointDetail(
+    //   dashColor: AppColors.lightBlue,
+    //   lineLength: 95,
+    //   pillData: pillData2,
+    // ));
 
     return subPointDetails;
   }
@@ -230,11 +230,11 @@ class JourneyRepo {
       descriptionTextStyle: TextStyles.journeyDetailDescriptionStyle,
     ));
 
-    journeyDetails.add(JourneyDetail(
-      imagePath: null,
-      title: '',
-      description: '',
-    ));
+    // journeyDetails.add(JourneyDetail(
+    //   imagePath: null,
+    //   title: '',
+    //   description: '',
+    // ));
 
     return journeyDetails;
   }

@@ -158,7 +158,7 @@ class _SubPointDetailsState extends State<SubPointDetails> {
                     color: widget.dashColor!),
             ],
           ),
-        if (widget.index == widget.listCount-2)
+        if (widget.showRightDot)
           IndicatorSubPoint(
             indicatorData: widget.indicatorDataRight!,
             outerColor: widget.leftPointOuterColor,
@@ -172,7 +172,7 @@ class _SubPointDetailsState extends State<SubPointDetails> {
             showLeftLine: showLeftIndicatorLine(widget.index, widget.listCount),
             showRightLine: true,
             crossAxisAlignment:
-            setIndicatorCrossAxis(widget.index, widget.listCount),
+                setIndicatorCrossAxis(widget.index, widget.listCount),
           ),
       ],
     );
@@ -181,14 +181,14 @@ class _SubPointDetailsState extends State<SubPointDetails> {
   CrossAxisAlignment setIndicatorCrossAxis(index, listCount) {
     if (index == 0) {
       return CrossAxisAlignment.end;
-    } else if (index == listCount - 2) {
+    } else if (index == listCount - 1) {
       return CrossAxisAlignment.center;
     }
     return CrossAxisAlignment.center;
   }
 
   bool showRightIndicatorLine(index, listCount) {
-    if (index >= 0 && index < listCount - 1) {
+    if (index >= 0 && index <= listCount - 1) {
       return true;
     }
     return false;
