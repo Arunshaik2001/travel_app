@@ -41,6 +41,7 @@ class IndicatorDetails extends StatelessWidget {
         if (time.isNotNullNorEmpty())
           Text(
             time!,
+            textAlign: TextAlign.center,
             style: timeTextStyle ?? TextStyles.indicatorTimeTextStyle,
           ),
         if (date.isNotNullNorEmpty())
@@ -50,6 +51,7 @@ class IndicatorDetails extends StatelessWidget {
         if (date.isNotNullNorEmpty())
           Text(
             date!,
+            textAlign: TextAlign.center,
             style: dateTextStyle ?? TextStyles.indicatorDateTextStyle,
           ),
         if (location.isNotNullNorEmpty())
@@ -59,6 +61,7 @@ class IndicatorDetails extends StatelessWidget {
         if (location.isNotNullNorEmpty())
           Text(
             location!,
+            textAlign: TextAlign.center,
             style: locationTextStyle ?? TextStyles.indicatorLocationTextStyle,
           ),
         if (place.isNotNullNorEmpty())
@@ -68,6 +71,7 @@ class IndicatorDetails extends StatelessWidget {
         if (place.isNotNullNorEmpty())
           Text(
             place!,
+            textAlign: TextAlign.center,
             style: placeTextStyle ?? TextStyles.indicatorPlaceTextStyle,
           ),
       ],
