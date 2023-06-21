@@ -53,6 +53,7 @@ class SubPointDetails extends StatefulWidget {
   bool? isIndicatorRightLineDashed;
   bool showPillData;
   IndicatorData? indicatorDataRight;
+  void Function(Size) onIndicatorSizeChange;
 
   SubPointDetails(
       {super.key,
@@ -83,7 +84,8 @@ class SubPointDetails extends StatefulWidget {
       this.isIndicatorLeftLineDashed,
       this.isIndicatorRightLineDashed,
       this.showPillData = true,
-      this.indicatorDataRight});
+      this.indicatorDataRight,
+      required this.onIndicatorSizeChange});
 
   @override
   State<SubPointDetails> createState() => _SubPointDetailsState();
@@ -96,22 +98,28 @@ class _SubPointDetailsState extends State<SubPointDetails> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (widget.showLeftDot)
-          IndicatorSubPoint(
-            indicatorData: widget.indicatorDataLeft,
-            outerColor: widget.leftPointOuterColor,
-            innerColor: widget.leftPointInnerColor,
-            outerRadius: widget.leftPointOuterRadius,
-            innerRadius: widget.leftPointInnerRadius,
-            dashLength: widget.dashLength,
-            leftDashColor: widget.indicatorLeftDashColor!,
-            rightDashColor: widget.indicatorRightDashColor!,
-            isLeftLineDashed: widget.isIndicatorLeftLineDashed!,
-            isRightLineDashed: widget.isIndicatorRightLineDashed!,
-            showLeftLine: showLeftIndicatorLine(widget.index, widget.listCount),
-            showRightLine:
-                showRightIndicatorLine(widget.index, widget.listCount),
-            crossAxisAlignment:
-                setIndicatorCrossAxis(widget.index, widget.listCount),
+          WidgetSize(
+            onChange: (size) {
+              widget.onIndicatorSizeChange(size);
+            },
+            child: IndicatorSubPoint(
+              indicatorData: widget.indicatorDataLeft,
+              outerColor: widget.leftPointOuterColor,
+              innerColor: widget.leftPointInnerColor,
+              outerRadius: widget.leftPointOuterRadius,
+              innerRadius: widget.leftPointInnerRadius,
+              dashLength: widget.dashLength,
+              leftDashColor: widget.indicatorLeftDashColor!,
+              rightDashColor: widget.indicatorRightDashColor!,
+              isLeftLineDashed: widget.isIndicatorLeftLineDashed!,
+              isRightLineDashed: widget.isIndicatorRightLineDashed!,
+              showLeftLine:
+                  showLeftIndicatorLine(widget.index, widget.listCount),
+              showRightLine:
+                  showRightIndicatorLine(widget.index, widget.listCount),
+              crossAxisAlignment:
+                  setIndicatorCrossAxis(widget.index, widget.listCount),
+            ),
           ),
         if (widget.showPillData)
           Row(

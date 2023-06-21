@@ -18,6 +18,7 @@ class TripCard extends StatefulWidget {
 class _TripCardState extends State<TripCard> {
   Size? textSize;
   Size? subPointSize;
+  Size? indicatorSize;
 
   @override
   Widget build(BuildContext context) {
@@ -117,6 +118,11 @@ class _TripCardState extends State<TripCard> {
                         showPillData: showPillData(
                             index, widget.tripData.destinationCount),
                         indicatorDataRight: widget.tripData.indicatorDataList[index+1],
+                        onIndicatorSizeChange: (size){
+                          setState(() {
+                            indicatorSize = size;
+                          });
+                        },
                       ),
                     ),
                   ],
@@ -152,6 +158,12 @@ class _TripCardState extends State<TripCard> {
   }
 
   double calculateLeftGap(int index, int listCount) {
+    if(indicatorSize != null) {
+      return indicatorSize!.width;
+    }
+    else if(index == listCount-1){
+      return 0;
+    }
     if((textSize?.width ?? 0) <= 85){
       return max((subPointSize?.width ?? 0 - (textSize?.width ?? 0)) / 2, 0);
     }
