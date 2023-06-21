@@ -40,7 +40,7 @@ class IndicatorDetails extends StatelessWidget {
       children: [
         if (time.isNotNullNorEmpty())
           Text(
-            time!,
+            time!.replaceAll("\n", ""),
             textAlign: TextAlign.center,
             style: timeTextStyle ?? TextStyles.indicatorTimeTextStyle,
           ),
@@ -50,7 +50,7 @@ class IndicatorDetails extends StatelessWidget {
           ),
         if (date.isNotNullNorEmpty())
           Text(
-            date!,
+            date!.replaceAll("\n", ""),
             textAlign: TextAlign.center,
             style: dateTextStyle ?? TextStyles.indicatorDateTextStyle,
           ),
@@ -60,7 +60,7 @@ class IndicatorDetails extends StatelessWidget {
           ),
         if (location.isNotNullNorEmpty())
           Text(
-            location!,
+            location!.replaceAll("\n", ""),
             textAlign: TextAlign.center,
             style: locationTextStyle ?? TextStyles.indicatorLocationTextStyle,
           ),
@@ -70,7 +70,7 @@ class IndicatorDetails extends StatelessWidget {
           ),
         if (place.isNotNullNorEmpty())
           Text(
-            place!,
+            place!.replaceAll("\n", ""),
             textAlign: TextAlign.center,
             style: placeTextStyle ?? TextStyles.indicatorPlaceTextStyle,
           ),
